@@ -1,12 +1,27 @@
 package chad.budgetkeeper;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends AppCompatActivity implements OnClickListener
 {
+
+    private Button breakdownBtn, creditsDebitsBtn, recurringBtn, shareBtn;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -14,17 +29,43 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // need 3 spinner codes (type1, type2, and howOften)
+        // buttons to click to new activity
+        creditsDebitsBtn = (Button) findViewById(R.id.creditsdebits);
+        recurringBtn = (Button) findViewById(R.id.recurring);
+        breakdownBtn = (Button) findViewById(R.id.breakdown);
+        shareBtn = (Button) findViewById(R.id.share);
 
-//        // make scrollable the credit/debit lists in "breakdown"
-//        TextView creditList = (TextView) findViewById(R.id.creditList);
-//        creditList.setMovementMethod(new ScrollingMovementMethod());
-//
-//        TextView debitList = (TextView) findViewById(R.id.debitList);
-//        debitList.setMovementMethod(new ScrollingMovementMethod());
-
+        creditsDebitsBtn.setOnClickListener(this);
+        recurringBtn.setOnClickListener(this);
+        breakdownBtn.setOnClickListener(this);
+        shareBtn.setOnClickListener(this);
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
+    @Override
+    // click to corresponding activity
+    public void onClick(View view)
+    {
+        if (view.getId() == R.id.creditsdebits)
+        {
+            Intent creditDebitIntent = new Intent(this, CreditsDebits.class);
+            this.startActivity(creditDebitIntent);
+        } else if (view.getId() == R.id.recurring)
+        {
+            Intent recurringIntent = new Intent(this, Recurring.class);
+            this.startActivity(recurringIntent);
+        } else if (view.getId() == R.id.breakdown)
+        {
+            Intent breakdownIntent = new Intent(this, Breakdown.class);
+            this.startActivity(breakdownIntent);
+        } else if (view.getId() == R.id.share)
+        {
+            Intent shareIntent = new Intent(this, Share.class);
+            this.startActivity(shareIntent);
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
@@ -43,11 +84,52 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings)
+        {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Main Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://chad.budgetkeeper/http/host/path")
+        );
+        AppIndex.AppIndexApi.start(client, viewAction);
+    }
+
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Main Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://chad.budgetkeeper/http/host/path")
+        );
+        AppIndex.AppIndexApi.end(client, viewAction);
+        client.disconnect();
+    }
 }
