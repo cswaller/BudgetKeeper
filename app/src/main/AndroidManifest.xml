@@ -16,6 +16,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".CreditsDebits"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
+        </activity>
+        <activity android:name=".Recurring">
+        </activity>
+        <activity
+            android:name=".Breakdown"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
+        </activity>
+        <activity android:name=".Share">
+        </activity>
+
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
         <meta-data

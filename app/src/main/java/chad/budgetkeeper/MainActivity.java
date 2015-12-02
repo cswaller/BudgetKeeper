@@ -52,15 +52,18 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         {
             Intent creditDebitIntent = new Intent(this, CreditsDebits.class);
             this.startActivity(creditDebitIntent);
-        } else if (view.getId() == R.id.recurring)
+        }
+        else if (view.getId() == R.id.recurring)
         {
             Intent recurringIntent = new Intent(this, Recurring.class);
             this.startActivity(recurringIntent);
-        } else if (view.getId() == R.id.breakdown)
+        }
+        else if (view.getId() == R.id.breakdown)
         {
             Intent breakdownIntent = new Intent(this, Breakdown.class);
             this.startActivity(breakdownIntent);
-        } else if (view.getId() == R.id.share)
+        }
+        else
         {
             Intent shareIntent = new Intent(this, Share.class);
             this.startActivity(shareIntent);
