@@ -9,14 +9,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
+
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener
 {
-
+    // clickable buttons to other activities
     private Button breakdownBtn, creditsDebitsBtn, recurringBtn, shareBtn;
+    // display text views
+    private TextView checkingBal, savingsBal;
+
+
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -29,7 +35,27 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // buttons to click to new activity
+        // tie TextViews to activity id's
+        checkingBal= (TextView)findViewById(R.id.checkingDisplay);
+        savingsBal= (TextView)findViewById(R.id.savingsDisplay);
+
+        /*
+        CORY:
+
+        This is my code from displaying a list of scores in a game
+        Maybe you can use some of it to display info from database...
+        Of course, this isn't what we want, but we do need something like it
+
+        SharedPreferences scorePrefs = getSharedPreferences(PlayGame.GAME_PREFS, 0);
+        String[] savedScores = scorePrefs.getString("highScores", "").split("\\|");
+        StringBuilder scoreBuild = new StringBuilder("");
+        for(String score : savedScores)
+            scoreBuild.append(score+"\n");
+        //display scores
+        scoreView.setText(scoreBuild.toString());
+        */
+
+        // tie buttons to activity id's
         creditsDebitsBtn = (Button) findViewById(R.id.creditsdebits);
         recurringBtn = (Button) findViewById(R.id.recurring);
         breakdownBtn = (Button) findViewById(R.id.breakdown);
