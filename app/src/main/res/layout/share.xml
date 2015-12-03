@@ -33,6 +33,72 @@
             android:layout_width="match_parent"
             android:layout_height="3dp"
             android:background="@android:color/black"/>
+
+    </LinearLayout>
+
+
+    <!--<LinearLayout-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/shareWith"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:paddingRight="27.25dp"-->
+            <!--android:text="Enter email to share with"-->
+            <!--android:textColor="#ffffffff"-->
+            <!--android:textSize="20sp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:paddingLeft="20dp"-->
+            <!--android:paddingTop="20dp"-->
+            <!--android:paddingBottom="30dp"-->
+            <!--android:gravity="center"/>-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:paddingBottom="20dp">-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/email"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:text="user entered email"-->
+            <!--android:inputType="textEmailAddress"-->
+            <!--android:textColor="#ffffffff"-->
+            <!--android:textSize="20sp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:gravity="center"-->
+            <!--android:visibility="visible"/>-->
+    <!--</LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:paddingBottom="300dp"
+        android:paddingLeft="100dp"
+        android:paddingRight="100dp"
+        android:paddingTop="50dp">
+
+        <Button
+            android:id="@+id/send"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="#02ffeb"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Send data in an email"
+            android:textColor="#ff333333"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </LinearLayout>
