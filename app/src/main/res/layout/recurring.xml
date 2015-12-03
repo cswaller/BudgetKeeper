@@ -174,6 +174,7 @@
             android:paddingRight="27.25dp"
             android:text="$$"
             android:textColor="#ffffffff"
+            android:inputType="number"
             android:textSize="20sp"
             android:textStyle="bold"
             android:paddingLeft="20dp"

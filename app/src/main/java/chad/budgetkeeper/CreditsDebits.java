@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by chadparnin on 12/2/15.
@@ -27,8 +28,7 @@ public class CreditsDebits extends Activity implements AdapterView.OnItemSelecte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.credits_debits);
 
-        //onRadioButtonClicked();
-
+        // SPINNER FOR DROP DOWN CHOICE
         spinner1 = (Spinner) findViewById(R.id.type1Spinner);
         spinner1.setOnItemSelectedListener(this);
 
@@ -39,8 +39,14 @@ public class CreditsDebits extends Activity implements AdapterView.OnItemSelecte
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner1.setAdapter(adapter1);
+
+        // EDIT TEXT FOR AMOUNT
+        amount1Edit = (EditText) findViewById(R.id.amountEditText1);
+        amount1 = (TextView) findViewById(R.id.amount1);
+        // store amount in database
     }
 
+    // CREDIT DEBIT RADIO BUTTON
     public void onRadioButtonClicked(View view)
     {
         // Is the button now checked?
@@ -50,20 +56,26 @@ public class CreditsDebits extends Activity implements AdapterView.OnItemSelecte
         switch(view.getId()) {
             case R.id.creditRadioButton1:
                 if (checked)
-                    // do stuff
+                    // send what user enters as a credit to database entry
                     break;
             case R.id.debitRadioButton1:
                 if (checked)
-                    // do stuff
+                    // send what user enters as a debit to database entry
                     break;
         }
     }
 
+    // WHAT WE SELECTED IN SPINNER
     public void onItemSelected(AdapterView<?> parent, View view,
                                int pos, long id)
     {
-        // An item was selected. You can retrieve the selected item using
-        // parent.getItemAtPosition(pos)
+        // On selecting a spinner item
+        String item = parent.getItemAtPosition(pos).toString();
+
+        // Showing selected spinner item
+        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_SHORT).show();
+
+        // send to database entry
     }
 
     public void onNothingSelected(AdapterView<?> parent)
