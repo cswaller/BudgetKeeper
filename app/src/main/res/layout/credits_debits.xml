@@ -110,7 +110,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="50dp">
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp">
 
         <TextView
             android:id="@+id/type"
@@ -127,7 +128,7 @@
 
         <Spinner
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/type1Spinner"
             android:entries="@array/type1Array"
             android:layout_below="@+id/textView"
@@ -139,7 +140,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="100dp">
+        >
 
         <View
             android:layout_width="match_parent"

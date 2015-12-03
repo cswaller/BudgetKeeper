@@ -126,7 +126,7 @@
             android:paddingTop="10dp"/>
         <Spinner
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/type2Spinner"
             android:entries="@array/type2Array"
             android:layout_below="@+id/textView"
