@@ -16,10 +16,10 @@ import android.widget.TextView;
 public class CreditsDebits extends Activity implements AdapterView.OnItemSelectedListener
 {
 
-    RadioButton creditsRadio1, debitRadio1;
-    Spinner spinner1;
-    TextView amount1;
-    EditText amount1Edit;
+    private RadioButton creditsRadio1, debitRadio1;
+    private Spinner spinner1;
+    private TextView amount1;
+    private EditText amount1Edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
