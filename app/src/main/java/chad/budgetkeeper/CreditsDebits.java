@@ -11,9 +11,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Created by chadparnin on 12/2/15.
- */
+
 public class CreditsDebits extends Activity implements AdapterView.OnItemSelectedListener
 {
 
