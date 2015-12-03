@@ -27,6 +27,8 @@ public class CreditsDebits extends Activity implements AdapterView.OnItemSelecte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.credits_debits);
 
+        //onRadioButtonClicked();
+
         spinner1 = (Spinner) findViewById(R.id.type1Spinner);
         spinner1.setOnItemSelectedListener(this);
 
@@ -37,6 +39,24 @@ public class CreditsDebits extends Activity implements AdapterView.OnItemSelecte
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner1.setAdapter(adapter1);
+    }
+
+    public void onRadioButtonClicked(View view)
+    {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.creditRadioButton1:
+                if (checked)
+                    // do stuff
+                    break;
+            case R.id.debitRadioButton1:
+                if (checked)
+                    // do stuff
+                    break;
+        }
     }
 
     public void onItemSelected(AdapterView<?> parent, View view,
