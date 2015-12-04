@@ -110,7 +110,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="20dp">
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp">
 
         <TextView
             android:id="@+id/type2"
@@ -126,7 +127,7 @@
             android:paddingTop="10dp"/>
         <Spinner
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/type2Spinner"
             android:entries="@array/type2Array"
             android:layout_below="@+id/textView"
@@ -173,6 +174,7 @@
             android:paddingRight="27.25dp"
             android:text="$$"
             android:textColor="#ffffffff"
+            android:inputType="number"
             android:textSize="20sp"
             android:textStyle="bold"
             android:paddingLeft="20dp"
@@ -193,9 +195,9 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:paddingTop="20dp">
+        android:paddingTop="30dp">
 
         <TextView
             android:id="@+id/howOften"

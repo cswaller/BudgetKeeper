@@ -6,6 +6,8 @@
         <item>Food</item>
         <item>Gas</item>
         <item>Entertainment</item>
+        <item>Payroll</item>
+        <item>Bills</item>
         <item>Misc</item>
     </string-array>
 
