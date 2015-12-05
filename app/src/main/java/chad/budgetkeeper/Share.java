@@ -42,9 +42,8 @@ public class Share extends Activity implements View.OnClickListener
             // following database path may need changed
             String pathToMyAttachedFile = "/data/data/chad.budgetkeeper/databases";
             File file = new File(root, pathToMyAttachedFile);
-            if (!file.exists() || !file.canRead()) {
+            if (!file.exists() || !file.canRead())
                 return;
-            }
             Uri uri = Uri.fromFile(file);
             emailIntent.putExtra(Intent.EXTRA_STREAM, uri);
             startActivity(Intent.createChooser(emailIntent, "Pick an Email provider"));
